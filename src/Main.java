@@ -3,7 +3,7 @@ public class Main {
     private static ArrayList<User> users = new ArrayList<>();
 
     // Mock authentication service that always returns the first user when log in, and does nothing when sign up
-    private static IAuthenticationService authService = new IAuthenticationService() {
+    private static IAuthenticationService authService = new IAuthenticationService(users) {
         @Override
         public User signUp(String username, String password) {
             return null;
